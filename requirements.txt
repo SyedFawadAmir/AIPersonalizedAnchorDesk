@@ -1,0 +1,9 @@
+streamlit
+requests
+openai
+gTTS
+SpeechRecognition
+pygame
+jinja2
+datetime
+PyAudio

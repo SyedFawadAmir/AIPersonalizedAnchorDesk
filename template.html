@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ newspaper_title }}</title>
+    <style>
+        /* General styling */
+        body {
+            display: flex;
+            background-color: white;
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Sidebar styling */
+        .sidebar {
+            width: 25%;
+            padding: 20px;
+            background-color: #f8f8f8;
+            border-right: 1px solid #ccc;
+            box-shadow: inset -2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .sidebar h2 {
+            font-size: 24px;
+            font-family: 'Georgia', serif;
+            font-weight: bold;
+            text-align: center;
+            border-bottom: 2px solid black;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+        .sidebar-section {
+            margin-bottom: 30px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .sidebar-section h3 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+        .fun-facts {
+            font-size: 15px;
+            line-height: 1.5;
+            list-style-type: disc;
+            margin-left: 15px;
+        }
+        .fun-facts li {
+            margin-bottom: 5px;
+        }
+
+        /* Main content styling */
+        .main-content {
+            width: 75%;
+            padding: 20px;
+        }
+        .masthead {
+            text-align: center;
+            border-bottom: 3px solid black;
+            padding-bottom: 10px;
+        }
+        .masthead h1 {
+            font-size: 60px;
+            margin: 0;
+            font-family: 'Georgia', serif;
+        }
+        .masthead p {
+            font-size: 16px;
+            margin: 0;
+        }
+        .main-headline {
+            font-size: 36px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .lead-story {
+            text-align: justify;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .lead-image {
+            width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+        }
+        .section-title {
+            font-size: 28px;
+            font-weight: bold;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid black;
+            padding-bottom: 5px;
+        }
+        .article-columns {
+            column-count: 2;
+            column-gap: 40px;
+        }
+        .article {
+            break-inside: avoid;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+        }
+        .article h2 {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .article p {
+            font-size: 16px;
+            text-align: justify;
+        }
+        .article img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .article-caption {
+            font-size: 12px;
+            font-style: italic;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        /* Footer styling */
+        .footer {
+            text-align: center;
+            font-size: 14px;
+            border-top: 2px solid black;
+            padding-top: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-section">
+            <h2>Fun Facts</h2>
+            <ul class="fun-facts">
+                {% for fact in fun_facts %}
+                <li>{{ fact }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="sidebar-section">
+            <h2>Quote of the Day</h2>
+            <blockquote>
+                "The only way to do great work is to love what you do." - Steve Jobs
+            </blockquote>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="masthead">
+            <h1>{{ newspaper_title }}</h1>
+            <p>{{ issue_details }}</p>
+        </div>
+        <div class="main-headline">{{ main_headline.title }}</div>
+        {% if main_headline.image %}
+        <img src="{{ main_headline.image }}" class="lead-image" alt="Main Image">
+        {% endif %}
+        <div class="lead-story">{{ main_headline.summary }}</div>
+        {% for section in sections %}
+        <div class="section-title">{{ section.title }}</div>
+        <div class="article-columns">
+            {% for article in section.articles %}
+            <div class="article">
+                <h2>{{ article.title }}</h2>
+                {% if article.image %}
+                <img src="{{ article.image }}" alt="Article Image">
+                {% endif %}
+                {% if article.caption %}
+                <div class="article-caption">{{ article.caption }}</div>
+                {% endif %}
+                <p>{{ article.summary }}</p>
+            </div>
+            {% endfor %}
+        </div>
+        {% endfor %}
+        <div class="footer">
+            &copy; {{ current_year }} {{ newspaper_title }}. All rights reserved. | Page {{ current_page }} of {{ total_pages }}
+        </div>
+    </div>
+</body>
+</html>
