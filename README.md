@@ -1,13 +1,14 @@
-# Personalized Newspaper
+# AIPersonalizedAnchorDesk
 
-An AI-powered personalized newspaper application that fetches news from your favorite categories, summarizes them using Large Language Models (LLMs), and interacts with you through an AI News Reporter Assistant. The application adapts based on your feedback to provide a better user experience.
+An AI-powered personalized newspaper application that fetches news from your favorite categories, summarizes them using Large Language Models (LLMs), and interacts with you through a prompt-engineered AI News Reporter Assistant. The application adapts based on your feedback, refining its summaries and content delivery over time.
 
 ## Features
 
-- **Personalized News Retrieval**: Fetch news from your selected categories using advanced retrieval methods.
-- **Summarized Content**: Utilize LLMs to provide concise summaries of news articles.
-- **AI News Reporter Assistant**: Experience interactive news reporting through prompt-engineered AI assistants.
-- **Adaptive Learning**: The application improves based on your feedback and interactions, adjusting summaries and category priorities accordingly.
+- **Personalized News Retrieval**: Fetch news from your selected categories using the NewsAPI.
+- **Summarized Content**: Utilize LLMs (e.g., GPT-3.5-turbo) to create concise, adaptive summaries of news articles.
+- **AI News Reporter Assistant**: Experience an interactive, voice-driven interface that leverages prompt engineering to interpret requests, provide structured summaries, and maintain a natural conversational flow.
+- **Adaptive Learning**: Continuously improve based on user feedback, adjusting both the detail in summaries and the priority of categories.
+- **Prompt Engineering**: Fine-tuned prompts guide the LLM’s responses, ensuring reliable interpretation of user commands and dynamically refined summaries that respond to user preferences.
 
 ## Setup Instructions
 
@@ -22,5 +23,6 @@ An AI-powered personalized newspaper application that fetches news from your fav
 1. **Clone the Repository**
    
    ```bash
-   git clone https://github.com/your-username/personalized-newspaper.git
-   cd personalized-newspaper
+   git clone https://github.com/your-username/AIPersonalizedAnchorDesk.git
+   cd AIPersonalizedAnchorDesk
+
