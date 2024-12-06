@@ -1,0 +1,37 @@
+# Ignore Python bytecode and caches
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pydist
+
+# Ignore virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Ignore environment-specific or editor-specific files
+.idea/
+.vscode/
+*.swp
+
+# Ignore build and distribution artifacts
+build/
+dist/
+*.egg-info/
+
+# Ignore temporary or log files
+*.log
+*.tmp
+*.bak
+
+# Ignore macOS-specific files
+.DS_Store
+
+# Ignore user and feedback data
+preferences.json
+feedback.json
+
+# Ignore configuration files holding API keys or secrets
+config.py
