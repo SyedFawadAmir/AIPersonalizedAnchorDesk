@@ -26,3 +26,36 @@ An AI-powered personalized newspaper application that fetches news from your fav
    git clone https://github.com/your-username/AIPersonalizedAnchorDesk.git
    cd AIPersonalizedAnchorDesk
 
+2. **(Optional) Create and Activate a Virtual Environment**
+   
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+3. **Install Dependencies**
+   
+   ```bash
+   pip install -r requirements.txt
+   
+4. **Set Up API Keys**
+   
+   ```bash
+   OPENAI_API_KEY = 'YOUR_OPENAI_API_KEY'
+   NEWSAPI_KEY = 'YOUR_NEWSAPI_KEY'
+
+5. **Access the Application**
+   
+   ```bash
+   streamlit run app.py
+
+6. Access the Application
+   Open your web browser and navigate to the URL provided by Streamlit (usually http://localhost:8501).
+
+
+
+
+
+
+
+
+
